@@ -6,6 +6,7 @@ export function HomeRectangle({
   FAQ_MemoRise,
   RulesExplained,
   RandomCatFact,
+  PlayGame,
 }) {
   return (
     <div className="rectangle">
@@ -16,13 +17,25 @@ export function HomeRectangle({
         </div>
         <div className="column">
           <p>Would you like to:</p>
-          <button onClick={() => setContent(<FAQ_MemoRise />)}>
+          <button
+            onClick={() => setContent(<FAQ_MemoRise setContent={setContent} />)}
+          >
             1. Know more about <span className="blue">MemoRise</span>
           </button>
-          <button onClick={() => setContent(<RulesExplained />)}>
+          <button
+            onClick={() =>
+              setContent(
+                <RulesExplained setContent={setContent} PlayGame={PlayGame} />
+              )
+            }
+          >
             2. Play <span className="purple">memorisation game</span>
           </button>
-          <button onClick={() => setContent(<RandomCatFact />)}>
+          <button
+            onClick={() =>
+              setContent(<RandomCatFact setContent={setContent} />)
+            }
+          >
             3. Get a <span className="orange">random cat fact</span>
           </button>
         </div>
