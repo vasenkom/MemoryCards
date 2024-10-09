@@ -47,20 +47,34 @@ function App() {
     );
   }
 
-  function RandomCatFact() {
+  function RandomCatFactPic() {
     let [catFact, setCatFact] = useState("");
+    let [catPic, setCatPic] = useState("");
 
     useEffect(() => {
       fetch("https://meowfacts.herokuapp.com/")
         .then((response) => response.json())
-        .then((data) => setCatFact(data.data[0]));
+        .then((data) => setCatFact(data.data[0]))
+        .catch((error) => console.error("Error: ", error));
     }, []);
+
+    useEffect(() => {
+      fetch("https://cataas.com/cat")
+        .then((image) => setCatPic(image.url))
+        .catch((error) => console.error("Error: ", error));
+    }, []);
+
     return (
       <div>
-        <p>{catFact}</p>
-        <button onClick={() => setContent(null)}>
-          Get back to main screen
-        </button>
+        <div>
+          <img src={catPic} alt="A cute cat" />
+        </div>
+        <div>
+          <p>{catFact}</p>
+          <button onClick={() => setContent(null)}>
+            Get back to main screen
+          </button>
+        </div>
       </div>
     );
   }
@@ -80,7 +94,7 @@ function App() {
               setContent={setContent}
               FAQ_MemoRise={FAQ_MemoRise}
               PlayGame={PlayGame}
-              RandomCatFact={RandomCatFact}
+              RandomCatFact={RandomCatFactPic}
             />
           )}
         </div>
