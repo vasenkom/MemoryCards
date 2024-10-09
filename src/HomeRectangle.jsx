@@ -4,7 +4,7 @@ import Star from "./assets/Star1.svg";
 export function HomeRectangle({
   setContent,
   FAQ_MemoRise,
-  PlayGame,
+  RulesExplained,
   RandomCatFact,
 }) {
   return (
@@ -19,7 +19,7 @@ export function HomeRectangle({
           <button onClick={() => setContent(<FAQ_MemoRise />)}>
             1. Know more about <span className="blue">MemoRise</span>
           </button>
-          <button onClick={() => setContent(<PlayGame />)}>
+          <button onClick={() => setContent(<RulesExplained />)}>
             2. Play <span className="purple">memorisation game</span>
           </button>
           <button onClick={() => setContent(<RandomCatFact />)}>

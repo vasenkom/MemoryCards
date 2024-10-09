@@ -39,6 +39,26 @@ function App() {
     );
   }
 
+  function RulesExplained() {
+    return (
+      <div>
+        <p>Here are the rules</p>
+        <div>
+          <div></div>
+          <div>
+            In this game game you earn points by clicking on images, but each
+            image can only be clicked once. If you click on the same image more
+            than once, you do not earn any additional points.
+          </div>
+        </div>
+        <button onClick={() => setContent(<PlayGame />)}>Let`s play</button>
+        <button onClick={() => setContent(null)}>
+          Get back to main screen
+        </button>
+      </div>
+    );
+  }
+
   function PlayGame() {
     return (
       <div>
@@ -51,6 +71,7 @@ function App() {
     let [catFact, setCatFact] = useState("");
     let [catPic, setCatPic] = useState("");
 
+    // Random cat fact fetching
     useEffect(() => {
       fetch("https://meowfacts.herokuapp.com/")
         .then((response) => response.json())
@@ -58,6 +79,7 @@ function App() {
         .catch((error) => console.error("Error: ", error));
     }, []);
 
+    // Random cat picture fetching
     useEffect(() => {
       fetch("https://cataas.com/cat")
         .then((image) => setCatPic(image.url))
@@ -93,7 +115,7 @@ function App() {
             <HomeRectangle
               setContent={setContent}
               FAQ_MemoRise={FAQ_MemoRise}
-              PlayGame={PlayGame}
+              RulesExplained={RulesExplained}
               RandomCatFact={RandomCatFactPic}
             />
           )}
