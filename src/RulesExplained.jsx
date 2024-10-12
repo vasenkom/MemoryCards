@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export function RulesExplained({ setContent, PlayGame }) {
+export function RulesExplained({ setContent, StartGame }) {
   return (
     <div>
       <p>Here are the rules</p>
@@ -12,7 +12,7 @@ export function RulesExplained({ setContent, PlayGame }) {
           than once, you do not earn any additional points.
         </div>
       </div>
-      <button onClick={() => setContent(<PlayGame />)}>Let`s play</button>
+      <button onClick={() => setContent(<StartGame />)}>Let`s play</button>
       <button onClick={() => setContent(null)}>Get back to main screen</button>
     </div>
   );

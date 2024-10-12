@@ -6,7 +6,7 @@ export function HomeRectangle({
   FAQ_MemoRise,
   RulesExplained,
   RandomCatFact,
-  PlayGame,
+  StartGame,
 }) {
   return (
     <div className="rectangle">
@@ -25,7 +25,7 @@ export function HomeRectangle({
           <button
             onClick={() =>
               setContent(
-                <RulesExplained setContent={setContent} PlayGame={PlayGame} />
+                <RulesExplained setContent={setContent} StartGame={StartGame} />
               )
             }
           >
