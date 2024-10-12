@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "./css/App.css";
+import "./css/index.css";
 
 export function RandomCatFactPic({ setContent }) {
   let [catFact, setCatFact] = useState("");
@@ -20,15 +22,18 @@ export function RandomCatFactPic({ setContent }) {
   }, []);
 
   return (
-    <div>
-      <div>
-        <img src={catPic} alt="A cute cat" />
-      </div>
-      <div>
-        <p>{catFact}</p>
-        <button onClick={() => setContent(null)}>
-          Get back to main screen
-        </button>
+    <div className="rectangle">
+      <div className="columnsCat">
+        <div className="column">
+          <img className="catImg" src={catPic} alt="A cute cat" />
+        </div>
+        <div className="column">
+          <p className="titleCatFact">Here is your random cat fact:</p>
+          <p className="catFact">"{catFact}"</p>
+          <button onClick={() => setContent(null)}>
+            Get back to main screen
+          </button>
+        </div>
       </div>
     </div>
   );
