@@ -6,7 +6,8 @@ import { RandomCatFactPic } from "./RandomFactPic.jsx";
 import { RulesExplained } from "./RulesExplained.jsx";
 import { FAQ_MemoRise } from "./MemoRiseFAQ.jsx";
 import { LoadingScreen } from "./LoadingScreen.jsx";
-import "./App.css";
+import "./css/App.css";
+import "./css/index.css";
 
 function App() {
   // State to track the current content of the rectangle
@@ -41,30 +42,34 @@ function App() {
       <Header />
 
       <div className="main">
-        <div className="rectangle">
-          {/* Display loading screen if loading */}
-          {loading ? (
-            <LoadingScreen />
-          ) : gameMode ? (
-            <div>
-              <img src={content.primaryImage} alt={content.title} />
-              <p>
+        {/* Display loading screen if loading */}
+        {loading ? (
+          <LoadingScreen />
+        ) : gameMode ? (
+          <div className="cards">
+            <div className="card">
+              <img
+                className="cardImg"
+                src={content.primaryImage}
+                alt={content.title}
+              />
+              <p className="cardDescription">
                 {content.title}, {content.artistDisplayName}
               </p>
             </div>
-          ) : content ? (
-            content
-          ) : (
-            // If content is null, display the home page
-            <HomeRectangle
-              setContent={setContent}
-              FAQ_MemoRise={FAQ_MemoRise}
-              RulesExplained={RulesExplained}
-              RandomCatFact={RandomCatFactPic}
-              StartGame={StartGame}
-            />
-          )}
-        </div>
+          </div>
+        ) : content ? (
+          content
+        ) : (
+          // If content is null, display the home page
+          <HomeRectangle
+            setContent={setContent}
+            FAQ_MemoRise={FAQ_MemoRise}
+            RulesExplained={RulesExplained}
+            RandomCatFact={RandomCatFactPic}
+            StartGame={StartGame}
+          />
+        )}
       </div>
     </div>
   );
