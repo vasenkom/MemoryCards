@@ -44,6 +44,29 @@ function App() {
     setGameMode(true); // Start game by setting gameMode to true
   };
 
+  const [scoreCount, setscoreCount] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [clickedCards, setClickedCards] = useState([]);
+
+  function CountScore(index) {
+    if (clickedCards.includes(index)) {
+      setscoreCount(0);
+      setClickedCards([]);
+      console.log("You lost"); // debug
+    } else {
+      setscoreCount((prevScore) => prevScore + 1);
+      setClickedCards((prevCards) => [...prevCards, index]);
+    }
+
+    if (scoreCount + 1 > bestScore) {
+      setBestScore(scoreCount + 1);
+    }
+
+    if (bestScore >= 6) {
+      setBestScore(6);
+    }
+  }
+
   return (
     <div className="App">
       <Header />
@@ -53,20 +76,30 @@ function App() {
         {loading ? (
           <LoadingScreen />
         ) : gameMode ? (
-          <div className="cards">
-            {memoryCard.map((card, index) => (
-              <div className="card" key={index}>
-                <img
-                  className="cardImg"
-                  src={card.primaryImage}
-                  alt={card.title}
-                />
-                <p className="cardDescription">
-                  {card.title}, {card.artistDisplayName}
-                </p>
-              </div>
-            ))}
-          </div>
+          <>
+            <div className="scoreDesk">
+              <p className="purple">Score: {scoreCount}</p>
+              <p className="purple">Best Score: {bestScore}</p>
+            </div>
+            <div className="cards">
+              {memoryCard.map((card, index) => (
+                <div
+                  className="card"
+                  key={index}
+                  onClick={() => CountScore(index)}
+                >
+                  <img
+                    className="cardImg"
+                    src={card.primaryImage}
+                    alt={card.title}
+                  />
+                  <p className="cardDescription">
+                    {card.title}, {card.artistDisplayName}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </>
         ) : content ? (
           content
         ) : (
