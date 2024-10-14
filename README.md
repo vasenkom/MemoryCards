@@ -1,8 +1,21 @@
-# React + Vite
+# MemoRise Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Demo:** [Memory Cards Demo](https://memory-cards-delta.vercel.app/)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+MemoRise is a memory training game where users can enhance their memorization skills while learning about famous paintings and artists. The game also provides random cat facts to keep things fun and light. Additionally, users can enjoy the interactive experience of moving draggable objects around the screen.
+
+## Technologies Used
+
+- **React:** Core of the application.
+- **react-draggable:** Used to make objects draggable.
+- **collectionapi.metmuseum.org:** To fetch paintings and artist information.
+- **meowfacts API:** To retrieve random cat facts.
+- **cataas API:** To load random cat images.
+- **CSS/HTML:** Styled with custom CSS for responsiveness.
+- **Figma:** Designed the layout, and all drawings were custom-made by me.
+
+## Key Learnings
+
+In this project, I learned how to use `useEffect` in React to manage side effects and practiced working with multiple APIs to fetch and display data dynamically.
