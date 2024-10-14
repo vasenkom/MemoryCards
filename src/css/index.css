@@ -205,3 +205,143 @@ button:hover {
   left: 900px;
   top: 10px;
 }
+
+@media only screen and (min-width: 1700px) {
+  .rectangle {
+    width: 35%;
+    height: 300px;
+  }
+  .flowerOrange {
+    left: 537px;
+    top: 13px;
+  }
+  .RectangleYellow {
+    left: 600px;
+    top: 353px;
+  }
+  .FlowerGreen {
+    left: 1020px;
+    top: 400px;
+  }
+  .SpinGreen {
+    left: 1440px;
+    top: 290px;
+  }
+  .HeartPink {
+    left: 1400px;
+    top: 10px;
+  }
+}
+/* For screens between 992px and 1200px */
+@media (max-width: 1200px) and (min-width: 992px) {
+  .flowerOrange {
+    left: 30px;
+    top: 10px;
+  }
+  .RectangleYellow {
+    left: 130px;
+    top: 330px;
+  }
+  .FlowerGreen {
+    left: 550px;
+    top: 350px;
+  }
+  .SpinGreen {
+    left: 900px;
+    top: 250px;
+  }
+  .HeartPink {
+    left: 800px;
+    top: 8px;
+  }
+}
+
+/* For screens between 768px and 992px */
+@media (max-width: 992px) and (min-width: 768px) {
+  .rectangle {
+    width: 70%;
+    height: 300px;
+  }
+  .flowerOrange {
+    left: 20px;
+    top: 5px;
+  }
+  .RectangleYellow {
+    left: 100px;
+    top: 300px;
+  }
+  .FlowerGreen {
+    left: 500px;
+    top: 300px;
+  }
+  .SpinGreen {
+    left: 800px;
+    top: 220px;
+  }
+  .HeartPink {
+    left: 700px;
+    top: 5px;
+  }
+}
+
+/* For screens smaller than 768px (mobile devices) */
+@media (max-width: 768px) {
+  .rectangle {
+    width: 70%;
+    height: 350px;
+  }
+  .flowerOrange {
+    left: 10px;
+    top: 3px;
+  }
+  .RectangleYellow {
+    left: 70px;
+    top: 250px;
+  }
+  .FlowerGreen {
+    left: 400px;
+    top: 390px;
+  }
+  .SpinGreen {
+    left: 650px;
+    top: 200px;
+  }
+  .HeartPink {
+    left: 600px;
+    top: 3px;
+  }
+}
+@media (max-width: 425px) {
+  .rectangle {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 550px;
+  }
+
+  .columns,
+  .columnsCat {
+    flex-direction: column;
+  }
+  .flowerOrange {
+    left: 10px;
+    top: 3px;
+  }
+  .RectangleYellow {
+    left: 70px;
+    top: 250px;
+  }
+  .FlowerGreen {
+    left: 400px;
+    top: 690px;
+  }
+  .SpinGreen {
+    left: 30px;
+    top: 620px;
+  }
+  .HeartPink {
+    left: 400px;
+    top: 3px;
+  }
+}
