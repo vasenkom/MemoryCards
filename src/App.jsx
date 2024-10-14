@@ -1,6 +1,12 @@
 // App.js
 import React, { useEffect, useState } from "react";
+import Draggable from "react-draggable";
 import { Header } from "./Header.jsx";
+import Flower from "./assets/Flower.svg";
+import RectangleYellow from "./assets/RectangleYellow.svg";
+import FlowerGreen from "./assets/FlowerGreen.svg";
+import SpinGreen from "./assets/SpinGreen.svg";
+import HeartPink from "./assets/HeartPink.svg";
 import { HomeRectangle } from "./HomeRectangle.jsx";
 import { RandomCatFactPic } from "./RandomFactPic.jsx";
 import { RulesExplained } from "./RulesExplained.jsx";
@@ -15,6 +21,10 @@ function App() {
   const [gameMode, setGameMode] = useState(false);
   const [memoryCard, setMemoryCards] = useState([]);
   const [loading, setLoading] = useState(false); // loading icon to wait until all images are loaded
+
+  // // Draggble settings:
+  // const Draggable = require("react-draggable");
+  // const DraggableCore = Draggable.DraggableCore;
 
   useEffect(() => {
     if (gameMode) {
@@ -54,18 +64,18 @@ function App() {
       setscoreCount(0);
       setClickedCards([]);
       console.log("You lost"); // debug
+
+      if (scoreCount + 1 > bestScore) {
+        setBestScore(scoreCount);
+      }
     } else {
       setscoreCount((prevScore) => prevScore + 1);
       setClickedCards((prevCards) => [...prevCards, index]);
     }
 
-    if (scoreCount + 1 > bestScore) {
-      setBestScore(scoreCount + 1);
-    }
-
-    if (bestScore >= 6) {
-      setBestScore(6); // not the best way but will leaev for now
-    }
+    // if (bestScore >= 6) {
+    //   setBestScore(6); // not the best way but will leaev for now
+    // }
 
     randomiseFlexOrder();
   }
@@ -80,7 +90,29 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+      <Draggable>
+        <img src={Flower} className="flowerOrange drag" alt="Orange flower" />
+      </Draggable>
+      <Draggable>
+        <img
+          src={RectangleYellow}
+          className="RectangleYellow drag"
+          alt="Rectangle Yellow"
+        />
+      </Draggable>
+      <Draggable>
+        <img
+          src={FlowerGreen}
+          className="FlowerGreen drag"
+          alt="Flower Green"
+        />
+      </Draggable>
+      <Draggable>
+        <img src={SpinGreen} className="SpinGreen drag" alt="Spin Green" />
+      </Draggable>
+      <Draggable>
+        <img src={HeartPink} className="HeartPink drag" alt="Heart Pink" />
+      </Draggable>
       <div className="main">
         {/* Display loading screen if loading */}
         {loading ? (
