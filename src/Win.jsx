@@ -4,7 +4,7 @@ import StarPurple from "./assets/StarPurple.svg";
 export function Win({ setContent }) {
   return (
     <div className="rectangle" style={{ backgroundColor: "#f7d2b7" }}>
-      <p className="titleRectangle">Congaradulations!</p>
+      <p className="titleRectangle">Congratulations!</p>
       <div className="columns">
         <div className="column">
           <img src={StarPurple} alt="StarPurple" />
