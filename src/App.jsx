@@ -32,7 +32,7 @@ function App() {
           setMemoryCards(fetchedCards);
           setLoading(false);
         } catch (error) {
-          console.error("Problem fetching data", error);
+          console.error("Problem fetching data: ", error);
           setLoading(false);
         }
       };
@@ -48,6 +48,7 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
 
+  // Set score and best score
   function CountScore(index) {
     if (clickedCards.includes(index)) {
       setscoreCount(0);
@@ -63,9 +64,18 @@ function App() {
     }
 
     if (bestScore >= 6) {
-      setBestScore(6);
+      setBestScore(6); // not the best way but will leaev for now
     }
+
+    randomiseFlexOrder();
   }
+
+  const randomiseFlexOrder = () => {
+    const cards = document.querySelectorAll(".card");
+    [...cards].forEach((card, index, array) => {
+      card.style.order = Math.floor(Math.random() * array.length + 1);
+    });
+  };
 
   return (
     <div className="App">
@@ -78,8 +88,8 @@ function App() {
         ) : gameMode ? (
           <>
             <div className="scoreDesk">
-              <p className="purple">Score: {scoreCount}</p>
-              <p className="purple">Best Score: {bestScore}</p>
+              <p className="green">Score: {scoreCount}</p>
+              <p className="green">Best Score: {bestScore}</p>
             </div>
             <div className="cards">
               {memoryCard.map((card, index) => (
@@ -99,6 +109,15 @@ function App() {
                 </div>
               ))}
             </div>
+            <button
+              className="orange buttonHome"
+              onClick={() => {
+                setGameMode(false); // Reset the game mode
+                setContent(null);
+              }}
+            >
+              Get back to main screen
+            </button>
           </>
         ) : content ? (
           content
