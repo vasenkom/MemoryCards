@@ -12,6 +12,7 @@ import { RandomCatFactPic } from "./RandomFactPic.jsx";
 import { RulesExplained } from "./RulesExplained.jsx";
 import { FAQ_MemoRise } from "./MemoRiseFAQ.jsx";
 import { LoadingScreen } from "./LoadingScreen.jsx";
+import { Win } from "./Win.jsx";
 import "./css/App.css";
 import "./css/index.css";
 
@@ -61,21 +62,29 @@ function App() {
   // Set score and best score
   function CountScore(index) {
     if (clickedCards.includes(index)) {
-      setscoreCount(0);
-      setClickedCards([]);
       console.log("You lost"); // debug
-
-      if (scoreCount + 1 > bestScore) {
+      if (scoreCount > bestScore) {
         setBestScore(scoreCount);
       }
+      // Reset the score and clicked cards
+      setscoreCount(0);
+      setClickedCards([]);
+      setContent(null); // Clear any existing content, if needed
     } else {
-      setscoreCount((prevScore) => prevScore + 1);
+      const newScore = scoreCount + 1;
+      setscoreCount(newScore);
       setClickedCards((prevCards) => [...prevCards, index]);
-    }
+      console.log(newScore);
 
-    // if (bestScore >= 6) {
-    //   setBestScore(6); // not the best way but will leaev for now
-    // }
+      // Check if the player has won
+      if (newScore === 6) {
+        console.log("Player has won!"); // debug
+
+        const winComponent = <Win setContent={setContent} />;
+        setContent(winComponent);
+        setGameMode(false);
+      }
+    }
 
     randomiseFlexOrder();
   }
