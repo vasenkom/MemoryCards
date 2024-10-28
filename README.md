@@ -18,4 +18,4 @@ MemoRise is a memory training game where users can enhance their memorization sk
 
 ## Key Learnings
 
-In this project, I learned how to use `useEffect` in React to manage side effects and practiced working with multiple APIs to fetch and display data dynamically.
+In this project, I learned how to use `useEffect` in React to manage side effects and practiced working with multiple APIs to fetch and display data dynamically. This experience enhanced my skills in state management and asynchronous data handling, improving the overall interactivity and functionality of the application.
