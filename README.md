@@ -1,6 +1,6 @@
 # MemoRise Project
 
-**Demo:** [Memory Cards Demo](https://memory-cards-delta.vercel.app/)
+**Demo:** [Memory Cards Demo](https://memory-cards-cadm9tw7h-vasenkoms-projects.vercel.app/)
 
 ## Overview
 
