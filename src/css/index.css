@@ -25,7 +25,7 @@ body {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 55%;
+  width: 560px;
   height: 300px;
 }
 .titleRectangle {
@@ -208,7 +208,7 @@ button:hover {
 
 @media only screen and (min-width: 1700px) {
   .rectangle {
-    width: 35%;
+    width: 560px;
     height: 300px;
   }
   .flowerOrange {
@@ -234,6 +234,10 @@ button:hover {
 }
 /* For screens between 992px and 1200px */
 @media (max-width: 1200px) and (min-width: 992px) {
+  .rectangle {
+    width: 560px;
+    height: 300px;
+  }
   .flowerOrange {
     left: 30px;
     top: 10px;
@@ -259,7 +263,7 @@ button:hover {
 /* For screens between 768px and 992px */
 @media (max-width: 992px) and (min-width: 768px) {
   .rectangle {
-    width: 70%;
+    width: 560px;
     height: 300px;
   }
   .flowerOrange {
@@ -287,8 +291,11 @@ button:hover {
 /* For screens smaller than 768px (mobile devices) */
 @media (max-width: 768px) {
   .rectangle {
-    width: 70%;
+    width: 565px;
     height: 350px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .flowerOrange {
     left: 10px;
@@ -311,12 +318,12 @@ button:hover {
     top: 3px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 585px) {
   .rectangle {
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 400px; /* or any width less than 100% */
     height: 550px;
   }
 
@@ -333,15 +340,44 @@ button:hover {
     top: 250px;
   }
   .FlowerGreen {
-    left: 400px;
+    left: 320px;
     top: 690px;
   }
   .SpinGreen {
-    left: 30px;
+    left: 0px;
     top: 620px;
   }
   .HeartPink {
-    left: 400px;
+    left: 300px;
+    top: 200px;
+  }
+}
+@media (max-width: 405px) {
+  .rectangle {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 550px;
+  }
+  .flowerOrange {
+    left: 10px;
     top: 3px;
+  }
+  .RectangleYellow {
+    left: 70px;
+    top: 250px;
+  }
+  .FlowerGreen {
+    left: 210px;
+    top: 690px;
+  }
+  .SpinGreen {
+    left: 0px;
+    top: 720px;
+  }
+  .HeartPink {
+    left: 210px;
+    top: 100px;
   }
 }
